@@ -1,0 +1,34 @@
+#API Development and Web Server
+fastapi
+uvicorn[standard]
+
+# Model Validation
+pydantic
+pydantic-settings
+
+# DB Interaction and Migration assistant
+sqlalchemy
+psycopg2-binary
+alembic
+
+# Cryptography libraries
+python-jose[cryptography]
+passlib[bcrypt]
+
+#File Handling
+aiofiles
+python-multipart
+
+# PDF parsing
+unstructured
+pymupdf
+pillow
+
+#Handle Environment Variables
+python-dotenv
+
+#Excel Sheet Reading (If needed)
+openpyxl
+
+# To make 3rd Party API Request Calls (If needed)
+httpx

@@ -1,0 +1,16 @@
+# Environment Variables and Virutal Environments
+.env
+.venv/
+
+# Caches
+__pycache__/
+*.pyc
+
+# Alembic configs
+alembic/__pycache__
+alembic/*.pyc
+alembic/versions/__pycache__/
+alembic/versions/*pyc
+
+# Logs
+*.log
