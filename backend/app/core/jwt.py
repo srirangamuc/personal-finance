@@ -15,7 +15,7 @@ Args:
 Returns:
     - jwt : str -> JWT Token of the data encoded
 """
-def create_access_tokens(data: dict, expires_delta:timedelta = None):
+def create_access_token(data: dict, expires_delta:timedelta = None):
     to_encode = data.copy()
     expires = datetime.now(timezone.utc) + (expires_delta or timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp":expires})

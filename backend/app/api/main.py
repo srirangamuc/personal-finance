@@ -9,6 +9,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from app.core.config import settings
 from app.core.logger import get_logger
+from app.api import auth,users
 import subprocess
 
 logger = get_logger("startup")
@@ -35,11 +36,8 @@ app = FastAPI(title="Personal Finance Assistant",lifespan=lifespan)
 def root():
     """
     Test API to check whether the API is working or not
-    
-    Args:
-        None
-        
-    Returns:
-        None
     """
     return {"status":"OK"}
+
+app.include_router(auth.router,prefix="/auth",tags=["Auth"])
+app.include_router(users.router,prefix="/users",tags=["Users"])

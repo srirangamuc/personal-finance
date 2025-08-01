@@ -5,6 +5,7 @@ uvicorn[standard]
 # Model Validation
 pydantic
 pydantic-settings
+pydantic[email]
 
 # DB Interaction and Migration assistant
 sqlalchemy

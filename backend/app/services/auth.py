@@ -6,7 +6,6 @@ from sqlalchemy.orm import Session
 from app.db.models.user import User
 from app.db.schemas.user import UserCreate
 from app.core.security import hash_password,verify_password
-from app.core.jwt import create_access_tokens
 
 """
 Registers a new user
