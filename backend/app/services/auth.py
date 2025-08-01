@@ -3,7 +3,7 @@ Auth services for the application
 """
 
 from sqlalchemy.orm import Session
-from app.db.models.user import User
+from app.db.models.models import User
 from app.db.schemas.user import UserCreate
 from app.core.security import hash_password,verify_password
 

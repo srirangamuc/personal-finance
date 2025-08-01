@@ -13,6 +13,7 @@ from pydantic_settings import BaseSettings
 load_dotenv()
 
 class Settings(BaseSettings):
+    ALEMBIC_DATABASE_URL: str
     DATABASE_URL: str
     JWT_SECRET_KEY: str
     ALGORITHM: str

@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 from app.core.security import oauth2_scheme
 from app.core.jwt import decode_access_token
 from app.db.session import SessionLocal
-from app.db.models.user import User
+from app.db.models.models import User
 
 def get_db():
     db : Session = SessionLocal()
