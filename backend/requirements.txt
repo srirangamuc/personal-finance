@@ -11,6 +11,7 @@ pydantic[email]
 sqlalchemy
 psycopg2-binary
 alembic
+asyncpg
 
 # Cryptography libraries
 python-jose[cryptography]
@@ -27,6 +28,11 @@ pillow
 
 #Handle Environment Variables
 python-dotenv
+
+# # Testing tools
+# pytest
+# pytest-asyncio
+# aiosqlite
 
 #Excel Sheet Reading (If needed)
 openpyxl

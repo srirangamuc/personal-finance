@@ -9,7 +9,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from app.core.config import settings
 from app.core.logger import get_logger
-from app.api import auth,users
+from app.api import auth,users,category,transactions
 import subprocess
 
 logger = get_logger("startup")
@@ -41,3 +41,5 @@ def root():
 
 app.include_router(auth.router,prefix="/auth",tags=["Auth"])
 app.include_router(users.router,prefix="/users",tags=["Users"])
+app.include_router(category.router,prefix="/category",tags=["Category"])
+app.include_router(transactions.router,prefix="/transactions",tags=["Transaction"])
