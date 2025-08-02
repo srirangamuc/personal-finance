@@ -12,14 +12,14 @@ class TransactionCreate(BaseModel):
     user_id: UUID
     amount: float
     type: TransactionType
-    category_id: Optional[UUID]
+    category: Optional[str]
     description: Optional[str]
     date: date
 
 class TransactionUpdate(BaseModel):
     amount: Optional[float]
     type: Optional[TransactionType]
-    category_id: Optional[UUID]
+    category: Optional[str]
     description: Optional[str]
     date: Optional[date]
 
@@ -28,7 +28,7 @@ class TransactionRead(BaseModel):
     user_id: UUID
     amount: float
     type: TransactionType
-    category_id: Optional[UUID]
+    category: Optional[str]
     description: Optional[str]
     date: date
     created_at: datetime

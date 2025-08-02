@@ -21,7 +21,7 @@ Returns:
 
 async def create_user(user_data: UserCreate, db: AsyncSession):
     hashed = hash_password(user_data.password)
-    user = User(email=user_data.email, hashed_password=hashed)
+    user = User(username=user_data.username, email=user_data.email, hashed_password=hashed)
     db.add(user)
     await db.commit()
     await db.refresh(user)

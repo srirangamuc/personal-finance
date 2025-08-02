@@ -23,7 +23,6 @@ config = context.config
 
 ALEMBIC_DATABASE_URL = os.getenv("ALEMBIC_DATABASE_URL")
 DATABASE_URL = ALEMBIC_DATABASE_URL or os.getenv("DATABASE_URL")
-print("DATABASE_URL:", DATABASE_URL)  # Debug print to verify .env loading
 if DATABASE_URL:
     config.set_main_option("sqlalchemy.url", DATABASE_URL)
 

@@ -4,7 +4,7 @@ Auth API's based on the services written
 from fastapi import APIRouter, Depends, HTTPException,status
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.session import AsyncSessionLocal
-from app.db.schemas.user import UserCreate
+from app.db.schemas.user import UserCreate, UserLogin
 from app.services import auth as auth_service
 from app.db.session import get_db
 from app.core.jwt import create_access_token
@@ -22,7 +22,7 @@ async def register(user_data: UserCreate, db: AsyncSession = Depends(get_db)):
 
 
 @router.post("/login")
-async def login(user_data: UserCreate, db: AsyncSession = Depends(get_db)):
+async def login(user_data: UserLogin, db: AsyncSession = Depends(get_db)):
     """
         Route : /login
         Function : Authenticates an user

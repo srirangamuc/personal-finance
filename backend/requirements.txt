@@ -22,9 +22,11 @@ aiofiles
 python-multipart
 
 # PDF parsing
-unstructured
+unstructured[pdf]
 pymupdf
 pillow
+pdfminer.six==20221105
+pi_heif
 
 #Handle Environment Variables
 python-dotenv

@@ -6,10 +6,11 @@ Author : Srirangam Umesh Chandra
 Created on : 2025-07-31
 """
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from app.core.config import settings
 from app.core.logger import get_logger
-from app.api import auth,users,category,transactions
+from app.api import auth,users,transactions
 import subprocess
 
 logger = get_logger("startup")
@@ -31,6 +32,15 @@ async def lifespan(app:FastAPI):
 # App init
 app = FastAPI(title="Personal Finance Assistant",lifespan=lifespan)
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://localhost:3000"],  # Add your frontend URL(s)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # App routes
 @app.get("/")
 def root():
@@ -41,5 +51,4 @@ def root():
 
 app.include_router(auth.router,prefix="/auth",tags=["Auth"])
 app.include_router(users.router,prefix="/users",tags=["Users"])
-app.include_router(category.router,prefix="/category",tags=["Category"])
 app.include_router(transactions.router,prefix="/transactions",tags=["Transaction"])
