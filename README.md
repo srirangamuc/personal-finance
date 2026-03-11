@@ -84,6 +84,4 @@ The frontend will be available at [http://localhost:5173](http://localhost:5173)
 - `backend/` — FastAPI app, models, services, and database migrations
 - `frontend/` — React app, components, pages, and assets
 
-## Message to the evaluating team
-- I have used LLM based parsing since there are no clear instructions on the usage of parsing medium (Rule-Based / LLM Backed). I have used LLM Backed Parsing to reduce the time on defining the rules for rule based parsing. **This is not to be done in Real-Life Applications. Just used it to save some time. Thank you for understanding.**
 
